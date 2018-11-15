@@ -27,14 +27,14 @@ public class Fish extends Animal {
     }
 
     /**
-     * @return
+     * @return water type
      */
     public String getWaterType() {
         return waterType;
     }
 
     /**
-     * @param _waterType
+     * @param _waterType water type
      */
     public void setWaterType(String _waterType) {
         waterType = _waterType;

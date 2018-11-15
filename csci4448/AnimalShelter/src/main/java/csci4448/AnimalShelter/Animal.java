@@ -1,112 +1,97 @@
 package csci4448.AnimalShelter;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.*;
 
-/**
- * 
- */
+@Document(collection = "animal")
+
 public abstract class Animal {
 
     /**
      * Default constructor
      */
     public Animal() {
+        name = "";
+        description = "";
+        color = "";
+        adopted = false;
     }
 
     /**
      * 
      */
-    public int animalId;
-
-    /**
-     * 
-     */
+    @Id
     public String name;
 
     /**
      * 
      */
-    public String image;
+    public String description;
 
     /**
      * 
      */
     public String color;
 
+    public boolean adopted;
+
     /**
-     * @return
+     *
      */
-    public void Animal() {
-        animalId = 0;
-        name = "";
-        image = "";
-        color = "";
-        return;
+    public void Animal(String _name, String _description, String _color, boolean _adopted) {
+        name = _name;
+        description = _description;
+        color = _color;
+        adopted = _adopted;
     }
 
     /**
-     * @return
-     */
-    public void setAnimalId(int _animalId) {
-        animalId = _animalId;
-        return;
-    }
-
-    /**
-     * @return
+     * @return name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param _name 
-     * @return
+     * @param _name name
      */
     public void setName(String _name) {
         name = _name;
-        return;
     }
 
     /**
-     * @return
+     * @return description
      */
-    public String getImage() {
-        return image;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * @param _image 
-     * @return
+     * @param _description description
      */
-    public void setImage(String _image) {
-        image = _image;
-        return;
+    public void setDescription(String _description) {
+        description = _description;
     }
 
+    public boolean getAdopted() { return adopted; }
+
+    public void setAdopted(boolean _adopted) {
+        adopted = _adopted;
+    }
     /**
-     * @return
+     * @return color
      */
     public String getColor() {
         return color;
     }
 
     /**
-     * @param _color 
-     * @return
+     * @param _color color
      */
     public void setColor(String _color) {
         color = _color;
-        return;
-    }
-
-    /**
-     * @param animalId 
-     * @return
-     */
-    public boolean becomeAdopted(int animalId) {
-        // TODO implement here
-        return false;
     }
 
 }

@@ -22,16 +22,19 @@ public class UserService {
             return false;
         }
         Volunteer v = new Volunteer(username, password, id);
-        repo.save(v);
+        saveUser(v);
         return true;
+    }
+
+    public void saveUser(Volunteer v) {
+        repo.save(v);
     }
 
     private long getCount() {
         return repo.count();
     }
 
-    public Volunteer getUser(String username) {
-        Optional<Volunteer> a = repo.findById(username);
-        return a.orElse(null);
+    public Optional<Volunteer> getUser(String username) {
+        return repo.findById(username);
     }
 }

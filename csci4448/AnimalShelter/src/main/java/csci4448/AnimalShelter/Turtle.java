@@ -11,6 +11,7 @@ public class Turtle extends Animal {
      * Default constructor
      */
     public Turtle() {
+        type = "";
     }
 
     /**
@@ -19,19 +20,17 @@ public class Turtle extends Animal {
     public String type;
 
     /**
-     * @return
+     *
      */
-    public void Turtle() {
-        type = "";
-        return;
+    public Turtle(String _type) {
+        type = _type;
     }
 
     /**
-     * @return
+     * @return turtle type
      */
     public String getType() {
-        // TODO implement here
-        return "";
+        return type;
     }
 
     /**

@@ -76,24 +76,6 @@ public class Volunteer {
         return employeeId;
     }
 
-
-    /**
-     * @param username 
-     * @param password 
-     * @return
-     */
-    public boolean login(String username, String password) {
-        // TODO implement here
-        return false;
-    }
-
-    /**
-     * @return
-     */
-    public void logout() {
-        // TODO implement here
-    }
-
     /**
      * @param _animal 
      * @return

@@ -20,23 +20,21 @@ public class AnimalShelterApplication {
 class driver {
 	@Autowired
 	@ShellMethod("Driver")
-	public void create(UserService userService) {
+	public void create(UserService userService, AnimalService animalService) {
+		Menu m = new Menu();
+		Scanner input = new Scanner(System.in);
 		while(true) {
-			Scanner input = new Scanner(System.in);
-			System.out.println("Welcome! Enter your name");
-			String volunteerName = input.nextLine();
-			System.out.println("Enter your password");
-			String volunteerpass = input.nextLine();
-			if (!userService.userSignUp(volunteerName, volunteerpass)){
-				System.out.println("Username already taken.");
-				continue;
+			while (m.getLoggedIn()) {
+				Volunteer v = m.v;
+				System.out.println(m.printMenu(v));
+				String option = input.nextLine();
+				m.setUserOption(option);
+				m.userControls(input, userService, animalService);
 			}
-			Volunteer v = userService.getUser(volunteerName);
-			System.out.println("Welcome, " + v.getId());
-			return;
+			System.out.println(m.printMenu());
+			String option = input.nextLine();
+			m.setUserOption(option);
+ 			m.userControls(input, userService, animalService);
 		}
-//		Dog d = new Dog();
-//		d.setActivityLevel(10);
-//		System.out.println("activity level: " + d.getActivityLevel());
 	}
 }

@@ -21,21 +21,21 @@ public class Dog extends Animal {
     }
 
     /**
-     * @param _activityLevel
+     * @param _activityLevel activity level
      */
     public Dog(int _activityLevel) {
         activityLevel = _activityLevel;
     }
 
     /**
-     * @return
+     * @return activity level
      */
     public int getActivityLevel() {
         return activityLevel;
     }
 
     /**
-     * @param _activityLevel 
+     * @param _activityLevel activity level
      *
      */
     public void setActivityLevel(int _activityLevel) {
