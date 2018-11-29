@@ -5,83 +5,68 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.*;
 
-@Document(collection = "volunteer")
-
 /**
- * 
+ * The class containing the methods for a volunteer which is a user in this system
  */
+@Document(collection = "volunteer")
 public class Volunteer {
 
     /**
-     * Default constructor
+     * Default constructor for a volunteer object
      */
     public Volunteer() {
         id = "";
         password = "";
-        employeeId = 0;
     }
 
     /**
-     * 
+     * The username and unique identifier for a volunteer
      */
     @Id
     private String id;
-    // make a new user when changing and then clone and delete original username
 
     /**
-     * 
+     * The password for the volunteer
      */
     private String password;
 
     /**
-     *
+     * The constructor for a volunteer object
+     * @param _id the identification for the current user
+     * @param _password the password corresponding to the identification of the current user
      */
-    private int employeeId;
-
-    /**
-     *
-     */
-    public Volunteer(String _username, String _password, int _employeeId) {
-        id = _username;
+    public Volunteer(String _id, String _password) {
+        id = _id;
         password = _password;
-        employeeId = _employeeId;
     }
 
     /**
-     * @return
+     * Gets the volunteer id for a volunteer object
+     * @return the volunteer id for the current volunteer
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @return
+     * Gets the password for a volunteer object
+     * @return password for the current volunteer
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * @param _password 
-     * @return
+     * Sets the volunteer id for a volunteer object
+     * @param _id an updated unique id for a user
+     */
+    public void setId(String _id) { id = _id; }
+
+    /**
+     * Sets the password for a volunteer
+     * @param _password an updated value for a user's password
      */
     public void setPassword(String _password) {
         password = _password;
     }
-
-    /**
-     * @return
-     */
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
-    /**
-     * @param _animal 
-     * @return
-     */
-    public void addAnimal(Animal _animal) {
-        // TODO implement here
-    }
-
 }
